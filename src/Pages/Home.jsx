@@ -3,6 +3,7 @@ import CircularGalleryUse from '../components/CircularGallery/CircularGalleryUse
 import Silk from '../components/Silk/Silk';
 import FeaturedProducts from '../components/FeaturedProducts/FeaturedProducts';
 import { Link } from 'react-router-dom';
+import Newsletter from '../components/Newsletter/Newsletter';
 
 const Home = () => {
   return (
@@ -48,6 +49,10 @@ const Home = () => {
 
       <div className="cont mt-30">
         <FeaturedProducts />
+
+        <div> 
+          <Newsletter />
+        </div>
       </div>
     </>
   );
