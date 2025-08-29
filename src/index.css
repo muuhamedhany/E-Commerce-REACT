@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Manrope:wght@200..800&display=swap');
+
+@import 'tailwindcss';
+
+* {
+  font-family: 'Manrope';
+  scrollbar-color: var(--text) var(--accent);
+  scrollbar-width: thin;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--text);
+}
+
+@media (max-width: 640px) {
+  * {
+    scrollbar-width: none;
+  }
+}
+
+@layer base {
+  :root {
+    --text: #0b0f0e;
+    --background: #f3f6f6;
+    --primary: #779c94;
+    --secondary: #b2c1c7;
+    --accent: #97a7b4;
+    --shadow: #1f252b45;
+  }
+  .dark {
+    --text: #f0f4f3;
+    --background: #090c0c;
+    --primary: #638880;
+    --secondary: #38474d;
+    --accent: #4b5b68;
+    --shadow: #ffffff1c;
+  }
+}
+
+.cont {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1330px !important;
+  padding: 0 2.5rem !important;
+}
+@media (max-width: 640px) {
+  .cont {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem !important;
+  }
+}
+
+.FacultyGlyphic {
+  font-family: 'Faculty Glyphic';
+}
+
+h1 {
+  font-family: 'Faculty Glyphic';
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+h2 {
+  font-size: 1.3rem;
+}
+
+@media (width < 600px) {
+  h1 {
+    font-family: 'Faculty Glyphic';
+    font-size: 3rem;
+    font-weight: bold;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+}
+
+body {
+  background-color: var(--background);
+  transition:
+    background-color 300ms,
+    color 300ms;
+}
+
+.cate {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--text);
+  color: transparent;
+}
+
+.text {
+  color: var(--text);
+  transition: 300ms;
+}
+.text:hover {
+  color: var(--primary);
+}
+
+.textNav {
+  color: var(--text);
+  transition: 300ms;
+}
+.textNav:hover {
+  color: var(--background);
+}
+
+.primary-button {
+  text-align: center;
+  color: #f3f6f6;
+  background-color: var(--primary);
+  padding: 0.5em 2em;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: 300ms;
+}
+.primary-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 40px #6388807b; /* appears only on hover */
+}
+
+.secondary-button {
+  text-align: center;
+  color: var(--text);
+  background-color: var(--secondary);
+  padding: 0.5em 2em;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: 300ms;
+}
+.secondary-button:hover {
+  transform: translateY(-3px);
+}
+
+.theme-button {
+  position: fixed;
+  background-color: var(--secondary);
+  color: var(--text);
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 300ms;
+  bottom: 15px;
+  right: 15px;
+  box-shadow: rgba(0, 0, 0, 0.521) 0px 0px 35px;
+}
+.theme-button:hover {
+  transform: translateY(-3px);
+}
+
+.ScrollUp-button {
+  position: fixed;
+  background-color: var(--secondary);
+  color: var(--text);
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 300ms;
+  bottom: 15px;
+  right: 60px;
+  box-shadow: rgba(0, 0, 0, 0.521) 0px 0px 35px;
+}
+@media (width <= 600px) {
+  .ScrollUp-button {
+    bottom: 55px;
+    right: 15px;
+  }
+}
+.ScrollUp-button:hover {
+  transform: translateY(-3px);
+}
+
+.transform {
+  transform: translateY(var(--tw-translate-y));
+}
+
+.translate-x-0 {
+  --tw-translate-x: 0;
+}
+
+.translate-x-full {
+  --tw-translate-x: 100%;
+}
+
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-transform {
+  transition-property: transform;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
+}
+
+.origin-top {
+  transform-origin: top;
+}
+
+.-translate-y-5 {
+  --tw-translate-y: -1.25rem;
+}
+
+.translate-y-0 {
+  --tw-translate-y: 0;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
