@@ -47,7 +47,7 @@ const Home = () => {
         <CircularGalleryUse  />
       </div>
 
-      <div className="cont mt-30">
+      <div className="cont flex flex-col gap-30 mt-30">
         <FeaturedProducts />
 
         <div> 
