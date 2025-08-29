@@ -40,17 +40,20 @@ const Home = () => {
       </div>
 
       <div className="bg-[var(--secondary)] py-10 text-center">
-        <h1>All PRODUCTS ARE NOW <span className='FacultyGlyphic cate italic'>50% </span> OFF!</h1>
+        <h1>
+          All PRODUCTS ARE NOW{' '}
+          <span className="FacultyGlyphic cate italic">50% </span> OFF!
+        </h1>
       </div>
 
       <div id="CircularGallery">
-        <CircularGalleryUse  />
+        <CircularGalleryUse />
       </div>
 
       <div className="cont flex flex-col gap-30 mt-30">
         <FeaturedProducts />
 
-        <div> 
+        <div>
           <Newsletter />
         </div>
       </div>

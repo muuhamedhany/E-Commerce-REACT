@@ -2,28 +2,31 @@ import React, { useEffect, useState } from 'react';
 import useProducts from '../data/data';
 import { ThreeDot } from 'react-loading-indicators';
 import { Card } from '../components/Card/Card';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const AllProducts = ({ category }) => {
-  const { data, loading, error } = useProducts();
+  const location = useLocation();
+  const searchQuery = new URLSearchParams(location.search).get('search') || '';
+
+  const { filteredData, loading, error } = useProducts(searchQuery);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    if (data) {
+    if (filteredData) {
       const uniqueCategories = [
-        ...new Set(data.map((product) => product.category)),
+        ...new Set(filteredData.map((product) => product.category)),
       ];
       setCategories(uniqueCategories);
       if (category) {
         setFilteredProducts(
-          data.filter((product) => product.category === category),
+          filteredData.filter((product) => product.category === category),
         );
       } else {
-        setFilteredProducts(data);
+        setFilteredProducts(filteredData);
       }
     }
-  }, [data, category]);
+  }, [filteredData, category]);
 
   if (loading)
     return (
@@ -41,7 +44,12 @@ const AllProducts = ({ category }) => {
   return (
     <div className="cont mt-15">
       <h1 className="font-bold text-center mb-8">
-        {category ? (
+        {searchQuery ? (
+          <>
+            Search Results for '
+            <span className="cate FacultyGlyphic">{searchQuery}</span>'
+          </>
+        ) : category ? (
           <>
             Products in{' '}
             <span className="capitalize FacultyGlyphic cate ">{category}</span>

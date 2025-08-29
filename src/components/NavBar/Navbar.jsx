@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaSearch as SearchIcon } from 'react-icons/fa';
 import { FaHeart as HeartIcon } from 'react-icons/fa';
 import { FaShoppingCart as CartIcon } from 'react-icons/fa';
@@ -11,10 +11,18 @@ const Navbar = () => {
   const [showAuth, setShowAuth] = useState(false);
   const [showCategories, setShowCategories] = useState(false);
   const [showMobileNav, setShowMobileNav] = useState(false);
-  const { categories } = useProducts();
+  const [searchQuery, setSearchQuery] = useState('');
+  const { categories, filteredData } = useProducts(searchQuery);
   const authRef = useRef(null);
   const categoriesRef = useRef(null);
   const mobileNavRef = useRef(null);
+  const navigate = useNavigate();
+
+  const handleSearch = (event) => {
+    const query = event.target.value;
+    setSearchQuery(query);
+    navigate(`/Shop?search=${query}`);
+  };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -150,6 +158,8 @@ const Navbar = () => {
               <input
                 type="search"
                 placeholder="Search products..."
+                value={searchQuery}
+                onChange={handleSearch}
                 className="px-4 py-2 rounded-full bg-[#779c9433] border-2 border-[var(--accent)]
              w-full focus:border-[var(--primary)] outline-none"
               />
@@ -249,6 +259,8 @@ const Navbar = () => {
             <input
               type="search"
               placeholder="Search products..."
+              value={searchQuery}
+              onChange={handleSearch}
               className="px-4 py-2 rounded-full bg-[#779c9413] border-2 border-[var(--accent)]
              w-[300px] focus:border-[var(--primary)] outline-none"
             />

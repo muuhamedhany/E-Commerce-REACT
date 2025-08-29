@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
-const useProducts = () => {
+const useProducts = (searchQuery = '') => {
   const [data, setData] = useState(null);
   const [categories, setCategories] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -38,7 +39,17 @@ const useProducts = () => {
     fetchData();
   }, []);
 
-  return { data, categories, loading, error };
+  useEffect(() => {
+    if (data) {
+      setFilteredData(
+        data.filter((product) =>
+          product.title.toLowerCase().includes(searchQuery.toLowerCase())
+        )
+      );
+    }
+  }, [data, searchQuery]);
+
+  return { filteredData, categories, loading, error };
 };
 
 export default useProducts;
