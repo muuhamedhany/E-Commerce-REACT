@@ -5,19 +5,25 @@ import ThemeToggle from '../components/Theme/ThemeToggle';
 import ScrollUp from '../components/ScrollUp/Scrollup';
 import Footer from '../components/Footer/Footer';
 import { WishlistProvider } from '../context/WishlistContext'; // Import WishlistProvider
+import { CartProvider } from '../context/CartContext'; // Import CartProvider
+import { ToastProvider } from '../context/ToastContext'; // Import ToastProvider
 
 const RootLayout = () => {
   return (
-    <WishlistProvider> {/* Wrap with WishlistProvider */}
-      <div>
-        <Navbar />
+    <ToastProvider> {/* Wrap with ToastProvider */}
+      <WishlistProvider> {/* Wrap with WishlistProvider */}
+        <CartProvider> {/* Wrap with CartProvider */}
+          <div>
+            <Navbar />
 
-        <Outlet />
+            <Outlet />
 
-        <ScrollUp />
-        <Footer />
-      </div>
-    </WishlistProvider>
+            <ScrollUp />
+            <Footer />
+          </div>
+        </CartProvider>
+      </WishlistProvider>
+    </ToastProvider>
   );
 };
 

@@ -2,19 +2,30 @@ import { FaStar } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { FaHeart } from 'react-icons/fa'; // Import FaHeart icon
 import { useWishlist } from '../../context/WishlistContext'; // Import useWishlist hook
+import { useCart } from '../../context/CartContext'; // Import useCart hook
+import { useToast } from '../../context/ToastContext'; // Import useToast hook
 import './Card.css';
 export function Card(props) {
   const { id, title, image, price, rate, inStock, handleMoveToCart, handleRemoveItem } = props;
   const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist(); // Use wishlist hook
+  const { addToCart } = useCart(); // Use cart hook
+  const { showToast } = useToast(); // Use toast hook
 
   const isProductInWishlist = isInWishlist(id); // Check if product is in wishlist
 
   const handleWishlistClick = () => {
     if (isProductInWishlist) {
       removeFromWishlist(id);
+      showToast('Item removed from wishlist!', 'error');
     } else {
       addToWishlist({ id, title, image, price, rate, inStock }); // Add inStock property
+      showToast('Item added to wishlist successfully!', 'success');
     }
+  };
+
+  const handleAddToCartClick = () => {
+    addToCart({ id, title, image, price, rate, inStock });
+    showToast('Item added to cart successfully!', 'success');
   };
 
   return (
@@ -77,9 +88,9 @@ export function Card(props) {
           </button>
         )}
         {!handleMoveToCart && !handleRemoveItem && (
-          <Link to={`/product/${id}`} className="primary-button">
+          <button onClick={handleAddToCartClick} className="primary-button">
             Add to Cart
-          </Link>
+          </button>
         )}
         <Link to={`/product/${id}`} className="secondary-button">
           View

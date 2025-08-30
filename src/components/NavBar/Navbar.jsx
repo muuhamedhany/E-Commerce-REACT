@@ -7,6 +7,7 @@ import { FaUser as UserIcon } from 'react-icons/fa';
 import { BsThreeDotsVertical as Dots } from 'react-icons/bs';
 import useProducts from '../../data/data';
 import { useWishlist } from '../../context/WishlistContext'; // Import useWishlist hook
+import { useCart } from '../../context/CartContext'; // Import useCart hook
 
 const Navbar = () => {
   const [showAuth, setShowAuth] = useState(false);
@@ -15,6 +16,7 @@ const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const { categories, filteredData } = useProducts(searchQuery);
   const { wishlist } = useWishlist(); // Use wishlist hook
+  const { getCartItemCount } = useCart(); // Use cart hook
   const authRef = useRef(null);
   const categoriesRef = useRef(null);
   const mobileNavRef = useRef(null);
@@ -128,13 +130,15 @@ const Navbar = () => {
 
           <Link to="/Cart" className="relative">
             <CartIcon size="25" />
-            <span
-              className="absolute -top-1 -right-2 bg-[var(--accent)]
+            {getCartItemCount() > 0 && ( // Conditionally render span based on cart item count
+              <span
+                className="absolute -top-1 -right-2 bg-[var(--accent)]
             text-[10px] rounded-full w-4 h-4
             flex items-center justify-center"
-            >
-              2
-            </span>
+              >
+                {getCartItemCount()}
+              </span>
+            )}
           </Link>
 
           <button
@@ -288,13 +292,15 @@ const Navbar = () => {
 
           <Link to="/Cart" className="relative">
             <CartIcon size="25" />
-            <span
-              className="absolute -top-1 -right-2 bg-[var(--accent)]
+            {getCartItemCount() > 0 && ( // Conditionally render span based on cart item count
+              <span
+                className="absolute -top-1 -right-2 bg-[var(--accent)]
             text-[10px] rounded-full w-4 h-4
             flex items-center justify-center"
-            >
-              2
-            </span>
+              >
+                {getCartItemCount()}
+              </span>
+            )}
           </Link>
 
           {/* Auth Dropdown */}
