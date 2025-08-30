@@ -1,14 +1,33 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useAuth } from '../context/AuthContext'; // Import useAuth
+import { useToast } from '../context/ToastContext'; // Import useToast
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const { login } = useAuth(); // Use login from AuthContext
+  const { showToast } = useToast(); // Use showToast from ToastContext
+  const navigate = useNavigate(); // Use navigate hook
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Login attempt with:', { email, password });
-    // Implement actual login logic here
+
+    // Basic validation for missing fields
+    if (!email || !password) {
+      showToast('Please enter both email and password.', 'error');
+      return;
+    }
+
+    const result = login(email, password); // Call login from AuthContext
+
+    if (result.success) {
+      showToast(result.message, 'success');
+      navigate('/'); // Redirect to home page on success
+    } else {
+      showToast(result.message, 'error'); // Show error toast for invalid credentials
+    }
   };
 
   return (

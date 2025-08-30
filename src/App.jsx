@@ -12,6 +12,7 @@ import About from './Pages/About';
 import NotFound from './Pages/NotFound';
 import Wishlist from './Pages/Wishlist';
 import ForgotPassword from './Pages/ForgotPassword'; // Import ForgotPassword
+import Profile from './Pages/Profile'; // Import Profile
 
 function App() {
   return (
@@ -19,28 +20,20 @@ function App() {
       <Routes>
         <Route path="/" element={<RootLayout />}>
           <Route index element={<Home />} />
-
           <Route path="/Shop" element={<Shop />}>
             <Route path=":category" element={<Shop />} />
             <Route index element={<Shop />} />
           </Route>
-
           <Route path="/Product/:id" element={<ProductDetails />} />
-
           <Route path="/Cart" element={<Cart />} />
-
           <Route path="/Wishlist" element={<Wishlist />} />
-
           <Route path="/Login" element={<Login />} />
-
           <Route path="/Signup" element={<Signup />} />
-
           <Route path="/forgot-password" element={<ForgotPassword />} />
-
+          <Route path="/Profile" element={<Profile />} />{' '}
+          {/* Add route for Profile */}
           <Route path="/Contact" element={<Contact />} />
-
           <Route path="/About" element={<About />} />
-
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

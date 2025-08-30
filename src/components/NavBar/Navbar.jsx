@@ -8,6 +8,7 @@ import { BsThreeDotsVertical as Dots } from 'react-icons/bs';
 import useProducts from '../../data/data';
 import { useWishlist } from '../../context/WishlistContext'; // Import useWishlist hook
 import { useCart } from '../../context/CartContext'; // Import useCart hook
+import { useAuth } from '../../context/AuthContext'; // Import useAuth hook
 
 const Navbar = () => {
   const [showAuth, setShowAuth] = useState(false);
@@ -17,6 +18,7 @@ const Navbar = () => {
   const { categories, filteredData } = useProducts(searchQuery);
   const { wishlist } = useWishlist(); // Use wishlist hook
   const { getCartItemCount } = useCart(); // Use cart hook
+  const { currentUser, logout } = useAuth(); // Use auth hook
   const authRef = useRef(null);
   const categoriesRef = useRef(null);
   const mobileNavRef = useRef(null);
@@ -242,20 +244,44 @@ const Navbar = () => {
               </Link>
 
               <div className="mt-4 flex flex-col gap-2">
-                <Link
-                  to="/Login"
-                  onClick={() => setShowMobileNav(false)}
-                  className="primary-button w-full"
-                >
-                  Log In
-                </Link>
-                <Link
-                  to="/Signup"
-                  onClick={() => setShowMobileNav(false)}
-                  className="secondary-button w-full"
-                >
-                  Sign Up
-                </Link>
+                {currentUser ? (
+                  <>
+                    <Link
+                      to="/Profile"
+                      onClick={() => setShowMobileNav(false)}
+                      className="primary-button w-full"
+                    >
+                      Profile
+                    </Link>
+                    <button
+                      onClick={() => {
+                        logout();
+                        setShowMobileNav(false);
+                        navigate('/Login');
+                      }}
+                      className="secondary-button w-full"
+                    >
+                      Log Out
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <Link
+                      to="/Login"
+                      onClick={() => setShowMobileNav(false)}
+                      className="primary-button w-full"
+                    >
+                      Log In
+                    </Link>
+                    <Link
+                      to="/Signup"
+                      onClick={() => setShowMobileNav(false)}
+                      className="secondary-button w-full"
+                    >
+                      Sign Up
+                    </Link>
+                  </>
+                )}
               </div>
             </div>
           </div>
@@ -321,12 +347,25 @@ const Navbar = () => {
             }`}
             >
               <div className="flex flex-col gap-2">
-                <Link to="/Login" className="primary-button">
-                  Log In
-                </Link>
-                <Link to="/Signup" className="secondary-button">
-                  Sign Up
-                </Link>
+                {currentUser ? (
+                  <>
+                    <Link to="/Profile" className="primary-button">
+                      Profile
+                    </Link>
+                    <button onClick={logout} className="secondary-button">
+                      Log Out
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <Link to="/Login" className="primary-button">
+                      Log In
+                    </Link>
+                    <Link to="/Signup" className="secondary-button">
+                      Sign Up
+                    </Link>
+                  </>
+                )}
               </div>
             </div>
           </div>

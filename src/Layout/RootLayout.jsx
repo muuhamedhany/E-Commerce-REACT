@@ -7,6 +7,7 @@ import Footer from '../components/Footer/Footer';
 import { WishlistProvider } from '../context/WishlistContext'; // Import WishlistProvider
 import { CartProvider } from '../context/CartContext'; // Import CartProvider
 import { ToastProvider } from '../context/ToastContext'; // Import ToastProvider
+import { AuthProvider } from '../context/AuthContext'; // Import AuthProvider
 import useProducts from '../data/data'; // Import useProducts hook
 
 const RootLayout = () => {
@@ -38,7 +39,10 @@ const RootLayout = () => {
         breadcrumbItems.push({ label: 'Home', path: '/' });
         pathnames.forEach((name, index) => {
           const routeTo = `/${pathnames.slice(0, index + 1).join('/')}`;
-          breadcrumbItems.push({ label: name.replace(/%20/g, ' '), path: routeTo });
+          breadcrumbItems.push({
+            label: name.replace(/%20/g, ' '),
+            path: routeTo,
+          });
         });
       }
     } else {
@@ -46,48 +50,63 @@ const RootLayout = () => {
       breadcrumbItems.push({ label: 'Home', path: '/' });
       pathnames.forEach((name, index) => {
         const routeTo = `/${pathnames.slice(0, index + 1).join('/')}`;
-        breadcrumbItems.push({ label: name.replace(/%20/g, ' '), path: routeTo });
+        breadcrumbItems.push({
+          label: name.replace(/%20/g, ' '),
+          path: routeTo,
+        });
       });
     }
   }
 
   return (
-    <ToastProvider> {/* Wrap with ToastProvider */}
-      <WishlistProvider> {/* Wrap with WishlistProvider */}
-        <CartProvider> {/* Wrap with CartProvider */}
-          <div>
-            <Navbar />
+    <ToastProvider>
+      {' '}
+      {/* Wrap with ToastProvider */}
+      <WishlistProvider>
+        {' '}
+        {/* Wrap with WishlistProvider */}
+        <CartProvider>
+          {' '}
+          {/* Wrap with CartProvider */}
+          <AuthProvider>
+            {' '}
+            {/* Wrap with AuthProvider */}
+            <div>
+              <Navbar />
 
-            {shouldShowBreadcrumbs && breadcrumbItems.length > 0 && (
-              <nav className="text-sm mb-6 cont mt-15">
-                <ol className="list-none p-0 inline-flex">
-                  {breadcrumbItems.map((item, index) => {
-                    const isLast = index === breadcrumbItems.length - 1;
-                    return (
-                      <li key={item.label} className="flex items-center">
-                        {isLast ? (
-                          <span className="text-gray-800 capitalize">{item.label}</span>
-                        ) : (
-                          <Link
-                            to={item.path}
-                            className="text-gray-600 hover:text-[var(--primary)] capitalize"
-                          >
-                            {item.label}
-                          </Link>
-                        )}
-                        {!isLast && <span className="mx-2">/</span>}
-                      </li>
-                    );
-                  })}
-                </ol>
-              </nav>
-            )}
+              {shouldShowBreadcrumbs && breadcrumbItems.length > 0 && (
+                <nav className="text-sm mb-6 cont mt-15">
+                  <ol className="list-none p-0 inline-flex">
+                    {breadcrumbItems.map((item, index) => {
+                      const isLast = index === breadcrumbItems.length - 1;
+                      return (
+                        <li key={item.label} className="flex items-center">
+                          {isLast ? (
+                            <span className="text-gray-800 capitalize">
+                              {item.label}
+                            </span>
+                          ) : (
+                            <Link
+                              to={item.path}
+                              className="text-gray-600 hover:text-[var(--primary)] capitalize"
+                            >
+                              {item.label}
+                            </Link>
+                          )}
+                          {!isLast && <span className="mx-2">/</span>}
+                        </li>
+                      );
+                    })}
+                  </ol>
+                </nav>
+              )}
 
-            <Outlet />
+              <Outlet />
 
-            <ScrollUp />
-            <Footer />
-          </div>
+              <ScrollUp />
+              <Footer />
+            </div>
+          </AuthProvider>
         </CartProvider>
       </WishlistProvider>
     </ToastProvider>

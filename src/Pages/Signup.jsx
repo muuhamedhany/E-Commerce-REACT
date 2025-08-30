@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useAuth } from '../context/AuthContext'; // Import useAuth
+import { useToast } from '../context/ToastContext'; // Import useToast
 
 const Signup = () => {
   const [fullName, setFullName] = useState('');
@@ -7,14 +9,32 @@ const Signup = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
+  const { register } = useAuth(); // Use register from AuthContext
+  const { showToast } = useToast(); // Use showToast from ToastContext
+  const navigate = useNavigate(); // Use navigate hook
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (password !== confirmPassword) {
-      alert("Passwords don't match!");
+
+    // Basic validation for missing fields
+    if (!fullName || !email || !password || !confirmPassword) {
+      showToast('Please fill in all fields.', 'error');
       return;
     }
-    console.log('Signup attempt with:', { fullName, email, password });
-    // Implement actual signup logic here
+
+    if (password !== confirmPassword) {
+      showToast("Passwords don't match!", 'error');
+      return;
+    }
+
+    const result = register(fullName, email, password); // Call register from AuthContext
+
+    if (result.success) {
+      showToast(result.message, 'success');
+      navigate('/Login'); // Redirect to Login page on success
+    } else {
+      showToast(result.message, 'error'); // Show error toast if email exists
+    }
   };
 
   return (

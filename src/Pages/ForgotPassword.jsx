@@ -1,14 +1,27 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext'; // Import useAuth
+import { useToast } from '../context/ToastContext'; // Import useToast
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
 
+  const { checkEmailExists } = useAuth(); // Use checkEmailExists from AuthContext
+  const { showToast } = useToast(); // Use showToast from ToastContext
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Password reset request for:', email);
-    // Implement actual password reset logic here (e.g., send email)
-    alert('If an account with that email exists, a password reset link has been sent.');
+
+    if (!email) {
+      showToast('Please enter your email address.', 'error');
+      return;
+    }
+
+    if (checkEmailExists(email)) {
+      showToast('Password reset link has been sent!', 'success');
+    } else {
+      showToast('Email not found.', 'error');
+    }
     setEmail(''); // Clear email after submission
   };
 
