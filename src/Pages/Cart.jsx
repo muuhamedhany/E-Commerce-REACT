@@ -49,14 +49,14 @@ const Cart = () => {
       <h1 className="text-4xl font-bold text-center mb-4 FacultyGlyphic">
         Your Shopping Cart
       </h1>
-      <p className="text-xl text-center text-gray-600 mb-8 dark:text-gray-300">
+      <p className="text-xl text-center text-gray-600 mb-8">
         Review your items before proceeding to checkout.
       </p>
 
       {cart.length === 0 ? ( // Use cart.length from context
         <div className="flex flex-col gap-5 items-center justify-center py-20 bg-gray-50 rounded-lg shadow-md">
           <PiEmptyBold size="55" />
-          <p className="text-2xl font-semibold text-gray-700 mb-4 dark:text-gray-300">
+          <p className="text-2xl font-semibold text-gray-700 mb-4">
             Your cart is empty. Start shopping to fill it up!
           </p>
           <Link to="/Shop" className="primary-button text-lg px-6 py-3">
@@ -69,7 +69,7 @@ const Cart = () => {
             {cart.map((item) => (
               <div
                 key={item.id}
-                className="flex flex-col md:flex-row items-center border rounded-lg p-4 shadow-sm transition-all duration-300 hover:shadow-md dark:bg-gray-700 dark:border-gray-600"
+                className="flex flex-col md:flex-row items-center border rounded-lg p-4 shadow-sm transition-all duration-300 hover:shadow-md"
               >
                 <img
                   src={item.image}
@@ -78,14 +78,14 @@ const Cart = () => {
                 />
                 <div className="flex-grow text-center md:text-left">
                   <Link to={`/product/${item.id}`}>
-                    <h2 className="text-xl font-semibold hover:underline text-white">
+                    <h2 className="text-xl font-semibold hover:underline text-gray-800">
                       {item.title} {/* Changed item.name to item.title */}
                     </h2>
                   </Link>
-                  <p className="text-gray-700 dark:text-gray-300">
+                  <p className="text-gray-700">
                     Price: ${item.price.toFixed(2)}
                   </p>
-                  <p className="text-gray-700 dark:text-gray-300">
+                  <p className="text-gray-700">
                     Subtotal: ${(item.price * item.quantity).toFixed(2)}
                   </p>
                 </div>
@@ -94,24 +94,24 @@ const Cart = () => {
                     onClick={() =>
                       handleQuantityChange(item.id, item.quantity - 1)
                     }
-                    className="px-3 py-1 border rounded-l-md hover:bg-gray-200 transition-colors duration-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-900"
+                    className="px-3 py-1 border rounded-l-md hover:bg-gray-200 transition-colors duration-200"
                   >
                     -
                   </button>
-                  <span className="px-4 py-1 border-t border-b text-gray-800 dark:border-gray-600 dark:bg-gray-800 dark:text-white">
+                  <span className="px-4 py-1 border-t border-b text-gray-800">
                     {item.quantity}
                   </span>
                   <button
                     onClick={() =>
                       handleQuantityChange(item.id, item.quantity + 1)
                     }
-                    className="px-3 py-1 border rounded-r-md hover:bg-gray-200 transition-colors duration-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-900"
+                    className="px-3 py-1 border rounded-r-md hover:bg-gray-200 transition-colors duration-200"
                   >
                     +
                   </button>
                   <button
                     onClick={() => handleRemoveItem(item.id)}
-                    className="ml-4 text-red-500 hover:text-red-700 transition-colors duration-200 p-2 rounded-full hover:bg-red-100 dark:hover:bg-red-900"
+                    className="ml-4 text-red-500 hover:text-red-700 transition-colors duration-200 p-2 rounded-full hover:bg-red-100"
                   >
                     <FaTrashAlt size={20} />
                   </button>
@@ -126,23 +126,19 @@ const Cart = () => {
             </Link>
           </div>
 
-          <div className="lg:w-1/3 bg-gray-50 p-6 rounded-lg shadow-md mt-8 lg:mt-0 dark:bg-gray-800 dark:text-white">
+          <div className="lg:w-1/3 bg-gray-50 p-6 rounded-lg shadow-md mt-8 lg:mt-0">
             <h2 className="text-2xl font-bold mb-4">Order Summary</h2>
             <div className="flex justify-between mb-2">
-              <span className="text-gray-700 dark:text-gray-300">
-                Subtotal:
-              </span>
+              <span className="text-gray-700">Subtotal:</span>
               <span className="font-semibold">${subtotal.toFixed(2)}</span>
             </div>
             <div className="flex justify-between mb-2">
-              <span className="text-gray-700 dark:text-gray-300">
-                Shipping:
-              </span>
+              <span className="text-gray-700">Shipping:</span>
               <span className="font-semibold">
                 {shipping === 0 ? 'Free' : `$${shipping.toFixed(2)}`}
               </span>
             </div>
-            <div className="flex justify-between font-bold text-xl border-t pt-4 mt-4 dark:border-gray-600">
+            <div className="flex justify-between font-bold text-xl border-t pt-4 mt-4">
               <span>Total:</span>
               <span>${total.toFixed(2)}</span>
             </div>
@@ -151,7 +147,7 @@ const Cart = () => {
               <input
                 type="text"
                 placeholder="Enter coupon code (optional)"
-                className="w-full p-3 border rounded-md mb-4 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                className="w-full p-3 border rounded-md mb-4"
               />
               <button className="w-full primary-button px-6 py-3 text-lg">
                 Proceed to Checkout
