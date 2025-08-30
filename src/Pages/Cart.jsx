@@ -54,7 +54,7 @@ const Cart = () => {
       </p>
 
       {cart.length === 0 ? ( // Use cart.length from context
-        <div className="flex flex-col gap-5 items-center justify-center py-20 bg-gray-50 rounded-lg shadow-md">
+        <div className="flex flex-col gap-5 items-center justify-center text-center p-20  bg-gray-50 rounded-lg shadow-md">
           <PiEmptyBold size="55" />
           <p className="text-2xl font-semibold text-gray-700 mb-4">
             Your cart is empty. Start shopping to fill it up!
