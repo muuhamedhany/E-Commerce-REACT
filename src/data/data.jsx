@@ -18,12 +18,26 @@ const useProducts = (searchQuery = '') => {
           throw new Error(`HTTP error! status: ${productsResponse.status}`);
         }
         const productsData = await productsResponse.json();
-        // Add a random inStock property to each product
-        const productsWithStock = productsData.map(product => ({
-          ...product,
-          inStock: Math.random() > 0.5,
-        }));
-        setData(productsWithStock);
+        // Assign a persistent random inStock property to each product
+        const productsWithPersistentStock = productsData.map(product => {
+          const storedInStock = localStorage.getItem(`product_${product.id}_inStock`);
+          let inStockStatus;
+
+          if (storedInStock === null) {
+            // If no status is stored, generate a random one and save it
+            inStockStatus = Math.random() > 0.5;
+            localStorage.setItem(`product_${product.id}_inStock`, inStockStatus.toString());
+          } else {
+            // Otherwise, use the stored status
+            inStockStatus = storedInStock === 'true';
+          }
+
+          return {
+            ...product,
+            inStock: inStockStatus,
+          };
+        });
+        setData(productsWithPersistentStock);
 
         // Fetch categories
         const categoriesResponse = await fetch(

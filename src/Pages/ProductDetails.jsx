@@ -163,7 +163,7 @@ const ProductDetails = () => {
             </div>
             <button
               onClick={handleAddToCart}
-              className={`primary-button flex-grow ${!product.inStock ? 'disabled-button' : ''}`}
+              className={` flex-grow ${!product.inStock ? 'disabled-button' : 'primary-button'}`}
               disabled={!product.inStock}
             >
               {product.inStock ? 'Add to Cart' : 'Out of Stock'}
