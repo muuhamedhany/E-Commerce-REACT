@@ -142,7 +142,7 @@ const Home = () => {
           <h4 className="text-4xl font-bold text-center mb-10 FacultyGlyphic dark:text-white">
             What Our Customers Say
           </h4>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid cont grid-cols-1 md:grid-cols-3 gap-8">
             <div className=" bg-[var(--secondary)] p-6 rounded-lg shadow-md ">
               <p className=" italic mb-4 ">
                 "Great quality and fast delivery. I'll definitely shop again!"
