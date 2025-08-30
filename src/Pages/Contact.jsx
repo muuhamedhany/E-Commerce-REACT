@@ -12,68 +12,73 @@ import {
 
 const Contact = () => {
   return (
-    <div className="cont mt-15 text-white ">
-      <h1 className="text-4xl text font-bold text-center mb-4 FacultyGlyphic ">
+    <div className="mt-15 px-4 md:px-0"> {/* Removed cont, added responsive padding */}
+      <h1 className="text-4xl font-bold text-center
+       mb-4 FacultyGlyphic text-gray-900 ">
         Contact Us
       </h1>
-      <p className="text-xl text text-center  mb-8 ">
+      <p className="text-xl text-center mb-8 text-gray-600 ">
         We’d love to hear from you. Reach out with any questions or feedback.
       </p>
 
-      <div className="lg:flex  lg:space-x-8">
+      <div className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto"> {/* Added max-w-7xl mx-auto for centering */}
         {/* Left Section: Contact Information */}
-        <div className="lg:w-1/2 cont space-y-8 mb-8 lg:mb-0">
-          <div className="bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] p-6 rounded-lg shadow-md">
-            <h2 className="text-2xl font-bold mb-4 FacultyGlyphic ">
+        <div className="w-full lg:w-1/2 space-y-8 mb-8 lg:mb-0">
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h2 className="text-2xl font-bold mb-4 FacultyGlyphic text-gray-900 ">
               Our Information
             </h2>
             <div className="space-y-4">
-              <div className="flex items-center text-white">
-                <FaMapMarkerAlt className="text-xl text-[var(--secondary)] mr-3" />
+              <div className="flex items-center text-gray-700">
+                <FaMapMarkerAlt className="text-xl text-[var(--primary)]
+                 mr-3" />
                 <p>123 E-commerce St, Suite 400, Business City, BC 90210</p>
               </div>
-              <div className="flex items-center text-white">
-                <FaPhone className="text-xl text-[var(--secondary)] mr-3" />
+              <div className="flex items-center text-gray-700">
+                <FaPhone className="text-xl text-[var(--primary)]
+                 mr-3" />
                 <p>+1 (555) 123-4567</p>
               </div>
-              <div className="flex items-center text-white">
-                <FaEnvelope className="text-xl text-[var(--secondary)] mr-3" />
+              <div className="flex items-center text-gray-700">
+                <FaEnvelope className="text-xl text-[var(--primary)]
+                 mr-3" />
                 <p>info@ecommerce.com</p>
               </div>
-              <div className="flex items-center text-white">
-                <FaClock className="text-xl text-[var(--secondary)] mr-3" />
+              <div className="flex items-center text-gray-700">
+                <FaClock className="text-xl text-[var(--primary)]
+                 mr-3" />
                 <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
               </div>
             </div>
           </div>
 
           {/* Social Media Links */}
-          <div className="bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] p-6 rounded-lg shadow-md">
-            <h2 className="text-2xl font-bold mb-4 FacultyGlyphic ">
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h2 className="text-2xl font-bold mb-4 FacultyGlyphic text-gray-900 ">
               Follow Us
             </h2>
             <div className="flex space-x-6">
               <a
                 href="#"
-                className="text-white hover:text-[var(--secondary)] transition-colors duration-300"
+                className="text-gray-600 hover:text-[var(--primary)] transition-colors duration-300"
               >
                 <FaFacebook className="text-3xl" />
               </a>
               <a
                 href="#"
-                className="text-white hover:text-[var(--secondary)] transition-colors duration-300"
+                className="text-gray-600 hover:text-[var(--primary)] transition-colors duration-300"
               >
                 <FaInstagram className="text-3xl" />
               </a>
               <a
                 href="#"
-                className="text-white hover:text-[var(--secondary)] transition-colors duration-300"
+                className="text-gray-600 hover:text-[var(--primary)] transition-colors duration-300"
               >
                 <FaTwitter className="text-3xl" />
               </a>
               <a
                 href="#"
-                className="text-white hover:text-[var(--secondary)] transition-colors duration-300"
+                className="text-gray-600 hover:text-[var(--primary)] transition-colors duration-300"
               >
                 <FaLinkedin className="text-3xl" />
               </a>
@@ -82,16 +87,16 @@ const Contact = () => {
         </div>
 
         {/* Right Section: Contact Form */}
-        <div className="cont">
-          <div className="lg:w-1/2 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] p-6 rounded-lg shadow-md">
-            <h4 className="text-2xl font-bold mb-4 FacultyGlyphic ">
+        <div className="w-full lg:w-1/2">
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h4 className="text-2xl font-bold mb-4 FacultyGlyphic text-gray-900 ">
               Send us a Message
             </h4>
             <form>
               <div className="mb-4">
                 <label
                   htmlFor="name"
-                  className="block text-white text-sm font-bold mb-2"
+                  className="block text-sm font-bold mb-2 text-gray-700"
                 >
                   Name
                 </label>
@@ -99,15 +104,15 @@ const Contact = () => {
                   type="text"
                   id="name"
                   name="name"
-                  className="w-full px-4 py-3 border border-gray-300 
-          rounded-[0.5rem] bg-[#495b5733]"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-[0.5rem] bg-gray-100 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent"
                   required
+                  placeholder="e.g., John Doe"
                 />
               </div>
               <div className="mb-4">
                 <label
                   htmlFor="email"
-                  className="block text-white text-sm font-bold mb-2"
+                  className="block text-sm font-bold mb-2 text-gray-700"
                 >
                   Email
                 </label>
@@ -115,15 +120,15 @@ const Contact = () => {
                   type="email"
                   id="email"
                   name="email"
-                  className="w-full px-4 py-3 border border-gray-300 
-          rounded-[0.5rem] bg-[#495b5733]"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-[0.5rem] bg-gray-100 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent"
                   required
+                  placeholder="e.g., john.doe@example.com"
                 />
               </div>
               <div className="mb-4">
                 <label
                   htmlFor="subject"
-                  className="block text-white text-sm font-bold mb-2"
+                  className="block text-sm font-bold mb-2 text-gray-700"
                 >
                   Subject
                 </label>
@@ -131,15 +136,15 @@ const Contact = () => {
                   type="text"
                   id="subject"
                   name="subject"
-                  className="w-full px-4 py-3 border border-gray-300 
-          rounded-[0.5rem] bg-[#495b5733]"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-[0.5rem] bg-gray-100 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent"
                   required
+                  placeholder="e.g., Product Inquiry"
                 />
               </div>
               <div className="mb-4">
                 <label
                   htmlFor="message"
-                  className="block text-white text-sm font-bold mb-2"
+                  className="block text-sm font-bold mb-2 text-gray-700"
                 >
                   Message
                 </label>
@@ -147,14 +152,14 @@ const Contact = () => {
                   id="message"
                   name="message"
                   rows="5"
-                  className="w-full px-4 py-3 border border-gray-300 
-          rounded-[0.5rem] bg-[#495b5733]"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-[0.5rem] bg-gray-100 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent"
                   required
+                  placeholder="e.g., I have a question about..."
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="secondary-button px-6 py-3 text-lg w-full"
+                className="primary-button px-6 py-3 text-lg w-full"
               >
                 Send Message
               </button>
@@ -164,9 +169,9 @@ const Contact = () => {
       </div>
 
       {/* Map Embed Section */}
-      <div className='cont'>
-        <div className="mt-12  bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] p-6 rounded-lg shadow-md">
-          <h2 className="text-2xl font-bold text-center mb-4 FacultyGlyphic ">
+      <div className="mt-12 max-w-7xl mx-auto px-4 md:px-0"> {/* Removed cont, added responsive padding and centering */}
+        <div className="bg-white p-6 rounded-lg shadow-md">
+          <h2 className="text-2xl font-bold text-center mb-4 text-gray-900 ">
             Find Us on the Map
           </h2>
           <div className="aspect-w-16 aspect-h-9">
