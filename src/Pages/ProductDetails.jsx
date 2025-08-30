@@ -74,29 +74,7 @@ const ProductDetails = () => {
 
   return (
     <div className="cont mt-15">
-      {/* Breadcrumbs */}
-      <nav className="text-sm mb-6">
-        <ol className="list-none p-0 inline-flex">
-          <li className="flex items-center">
-            <Link to="/" className="text-gray-600 hover:text-[var(--primary)]">
-              Home
-            </Link>
-            <span className="mx-2">/</span>
-          </li>
-          <li className="flex items-center">
-            <Link
-              to={`/Shop/${product.category}`}
-              className="text-gray-600 hover:text-[var(--primary)] capitalize"
-            >
-              {product.category}
-            </Link>
-            <span className="mx-2">/</span>
-          </li>
-          <li className="text-gray-800 truncate max-w-[200px]">
-            {product.title}
-          </li>
-        </ol>
-      </nav>
+      {/* Removed Breadcrumbs */}
 
       <div className="flex flex-col lg:flex-row gap-8 bg-gray-50 p-6 rounded-lg shadow-lg">
         {/* Image Section */}
