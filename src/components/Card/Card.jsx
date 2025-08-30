@@ -88,8 +88,12 @@ export function Card(props) {
           </button>
         )}
         {!handleMoveToCart && !handleRemoveItem && (
-          <button onClick={handleAddToCartClick} className="primary-button">
-            Add to Cart
+          <button
+            onClick={handleAddToCartClick}
+            className={!inStock ? 'disabled-button' : 'primary-button'}
+            disabled={!inStock}
+          >
+            {inStock ? 'Add to Cart' : 'Out of Stock'}
           </button>
         )}
         <Link to={`/product/${id}`} className="secondary-button">

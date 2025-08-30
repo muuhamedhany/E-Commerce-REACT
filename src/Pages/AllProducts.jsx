@@ -95,6 +95,7 @@ const AllProducts = ({ category }) => {
             image={product.image}
             price={product.price}
             rate={product.rating.rate}
+            inStock={product.inStock} // Pass the inStock prop
           />
         ))}
       </div>

@@ -16,8 +16,15 @@ export const CartProvider = ({ children }) => {
     setCart((prevCart) => {
       const existingItem = prevCart.find((item) => item.id === product.id);
       if (existingItem) {
-        return prevCart.map((item) =>
-          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item,
+        return prevCart.map(
+          (item) =>
+            item.id === product.id
+              ? {
+                  ...item,
+                  quantity: item.quantity + 1,
+                  inStock: product.inStock,
+                }
+              : item, // Update inStock as well
         );
       } else {
         return [...prevCart, { ...product, quantity: 1 }];
@@ -68,4 +75,4 @@ export const CartProvider = ({ children }) => {
   );
 };
 
-export const useCart = () => useContext(CartContext); 
+export const useCart = () => useContext(CartContext);

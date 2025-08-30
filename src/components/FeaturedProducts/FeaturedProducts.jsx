@@ -60,6 +60,7 @@ const FeaturedProducts = () => {
             image={product.image}
             price={product.price}
             rate={product.rating.rate}
+            inStock={true} // Pass inStock prop
           />
         ))}
       </div>
