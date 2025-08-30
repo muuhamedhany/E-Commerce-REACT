@@ -54,14 +54,16 @@ const Cart = () => {
       </p>
 
       {cart.length === 0 ? ( // Use cart.length from context
-        <div className="flex flex-col gap-5 items-center justify-center text-center p-20  bg-gray-50 rounded-lg shadow-md">
-          <PiEmptyBold size="55" />
-          <p className="text-2xl font-semibold text-gray-700 mb-4">
-            Your cart is empty. Start shopping to fill it up!
-          </p>
-          <Link to="/Shop" className="primary-button text-lg px-6 py-3">
-            Shop Now
-          </Link>
+        <div className="cont bg-gray-50 rounded-lg shadow-md">
+          <div className=" flex flex-col p-20 gap-5 items-center justify-center text-center">
+            <PiEmptyBold className="text-6xl text-[var(--primary)] mb-8 animate-pulse" />
+            <p className="text-2xl font-semibold text-gray-700 mb-4">
+              Your cart is empty. Start shopping to fill it up!
+            </p>
+            <Link to="/Shop" className="primary-button text-lg px-6 py-3">
+              Shop Now
+            </Link>
+          </div>
         </div>
       ) : (
         <div className="lg:flex lg:space-x-8">

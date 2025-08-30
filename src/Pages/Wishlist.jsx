@@ -71,7 +71,7 @@ const Wishlist = () => {
       </p>
 
       {wishlist.length === 0 ? ( // Use wishlist.length from context
-        <div className="flex flex-col items-center justify-center py-20 bg-gray-50 rounded-lg shadow-md">
+        <div className="flex gap-4 text-center flex-col items-center justify-center p-20 bg-gray-50 rounded-lg shadow-md">
           <FaHeart className="text-6xl text-[var(--primary)] mb-8 animate-pulse" />
           <p className="text-2xl font-semibold text-gray-700 mb-4">
             Your wishlist is empty. Start exploring and add items you love!
