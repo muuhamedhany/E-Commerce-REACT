@@ -68,19 +68,19 @@ h1 {
 h2 {
   font-size: 1.3rem;
 }
-h4{
+h4 {
   font-size: 2rem;
 }
 
 @media (width < 600px) {
   h1 {
     font-family: 'Faculty Glyphic';
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: bold;
   }
 
   h2 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -123,6 +123,14 @@ body {
   transition: 300ms;
 }
 .primary-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 40px #6388807b; /* appears only on hover */
+}
+
+.fleUp {
+  transition: 300ms;
+}
+.fleUp:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 40px #6388807b; /* appears only on hover */
 }

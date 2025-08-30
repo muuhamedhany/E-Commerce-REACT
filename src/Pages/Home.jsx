@@ -10,7 +10,7 @@ const Home = () => {
     <>
       {/* Hero Banner Section */}
       <div
-        className="relative h-[600px] bg-cover bg-center
+        className="relative md:h-[660px] h-[660px] bg-cover bg-center
          flex flex-col items-center justify-center text-center
           "
         style={{
@@ -26,7 +26,7 @@ const Home = () => {
           <p className="text-xl mb-8 max-w-2xl">
             Discover fashion, electronics, and more – all in one place.
           </p>
-          <Link to="/Shop" className="primary-button text-[1.5rem]">
+          <Link to="/Shop" className="primary-button z-10 text-[1.5rem]">
             Shop Now
           </Link>
         </div>
@@ -94,7 +94,7 @@ const Home = () => {
 
       {/* 3Featured Products / Best Sellers */}
       <div className="cont mt-15 mb-12">
-        <h4 className="font-bold text-center mb-10 FacultyGlyphic dark:text-white">
+        <h4 className="font-bold text-center mb-10 FacultyGlyphic ">
           Best Sellers
         </h4>
         <FeaturedProducts />
@@ -105,15 +105,15 @@ const Home = () => {
         {' '}
         <div
           className="bg-gradient-to-r from-[var(--primary)] to-[var(--accent)]
-       text-white mb-12 text-center shadow-lg 
+       text-white mb-12 text-center shadow-lg flex flex-col items-center py-7
         "
         >
-          <h2 className="text-4xl pt-10 mb-4 FacultyGlyphic">Today's Deals</h2>
-          <p className="text-xl mb-6">
+          <h4 className="text-4xl  mb-4 FacultyGlyphic">Today's Deals</h4>
+          <h4 className="text-xl mb-6">
             Up to{' '}
             <span className=" cate italic text-5xl FacultyGlyphic">50%</span>{' '}
             off Electronics
-          </p>
+          </h4>
 
           <Link to="/Shop" className="text-[1.3rem] secondary-button">
             Shop Deals
@@ -122,7 +122,7 @@ const Home = () => {
       </div>
 
       {/* New Arrivals */}
-      <div className="cont mt-15 mb-12">
+      <div className="cont my-35">
         <h4 className="text-4xl font-bold text-center mb-10 FacultyGlyphic ">
           Fresh & New
         </h4>
@@ -137,7 +137,7 @@ const Home = () => {
       </div>
 
       {/* Testimonials / Reviews */}
-      <div className="bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] py-12 mb-12 dark:bg-gray-900">
+      <div className="my-35 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] py-12 mb-12 dark:bg-gray-900">
         <div className="cont">
           <h4 className="text-4xl font-bold text-center mb-10 FacultyGlyphic dark:text-white">
             What Our Customers Say
@@ -168,7 +168,7 @@ const Home = () => {
       </div>
 
       {/* Newsletter Subscription */}
-      <div className="cont">
+      <div className="cont ">
         <Newsletter />
       </div>
     </>

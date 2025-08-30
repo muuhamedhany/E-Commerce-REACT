@@ -143,7 +143,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation Menu */}
         <div
-          className={`fixed inset-0 bg-[#0000004a] md:hidden transition-all duration-300 ${
+          className={`fixed z-100 inset-0 bg-[#0000004a] md:hidden transition-all duration-300 ${
             showMobileNav ? ' visible' : ' invisible'
           }`}
         >
