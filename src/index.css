@@ -127,6 +127,15 @@ body {
   box-shadow: 0 10px 40px #6388807b; /* appears only on hover */
 }
 
+.disabled-button {
+  text-align: center;
+  color: #f3f6f6;
+  background-color: var(--shadow);
+  padding: 0.5em 2em;
+  border-radius: 0.5rem;
+  transition: 300ms;
+}
+
 .fleUp {
   transition: 300ms;
 }

@@ -1,20 +1,23 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Navbar from '../components/NavBar/NavBar';
+import Navbar from '../components/NavBar/Navbar'; // Corrected import path
 import ThemeToggle from '../components/Theme/ThemeToggle';
 import ScrollUp from '../components/ScrollUp/Scrollup';
 import Footer from '../components/Footer/Footer';
+import { WishlistProvider } from '../context/WishlistContext'; // Import WishlistProvider
 
 const RootLayout = () => {
   return (
-    <div>
-      <Navbar />
+    <WishlistProvider> {/* Wrap with WishlistProvider */}
+      <div>
+        <Navbar />
 
-      <Outlet />
+        <Outlet />
 
-      <ScrollUp />
-      <Footer />
-    </div>
+        <ScrollUp />
+        <Footer />
+      </div>
+    </WishlistProvider>
   );
 };
 

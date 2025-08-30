@@ -18,7 +18,12 @@ const useProducts = (searchQuery = '') => {
           throw new Error(`HTTP error! status: ${productsResponse.status}`);
         }
         const productsData = await productsResponse.json();
-        setData(productsData);
+        // Add a random inStock property to each product
+        const productsWithStock = productsData.map(product => ({
+          ...product,
+          inStock: Math.random() > 0.5,
+        }));
+        setData(productsWithStock);
 
         // Fetch categories
         const categoriesResponse = await fetch(

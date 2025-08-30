@@ -6,6 +6,7 @@ import { FaShoppingCart as CartIcon } from 'react-icons/fa';
 import { FaUser as UserIcon } from 'react-icons/fa';
 import { BsThreeDotsVertical as Dots } from 'react-icons/bs';
 import useProducts from '../../data/data';
+import { useWishlist } from '../../context/WishlistContext'; // Import useWishlist hook
 
 const Navbar = () => {
   const [showAuth, setShowAuth] = useState(false);
@@ -13,6 +14,7 @@ const Navbar = () => {
   const [showMobileNav, setShowMobileNav] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const { categories, filteredData } = useProducts(searchQuery);
+  const { wishlist } = useWishlist(); // Use wishlist hook
   const authRef = useRef(null);
   const categoriesRef = useRef(null);
   const mobileNavRef = useRef(null);
@@ -113,13 +115,15 @@ const Navbar = () => {
         <div className="md:hidden flex items-center gap-4">
           <Link to="/Wishlist" className="relative">
             <HeartIcon size="25" />
-            <span
-              className="absolute -top-1 -right-2 bg-[var(--accent)]
+            {wishlist.length > 0 && ( // Conditionally render span based on wishlist length
+              <span
+                className="absolute -top-1 -right-2 bg-[var(--accent)]
             text-[10px] rounded-full w-4 h-4
             flex items-center justify-center"
-            >
-              2
-            </span>
+              >
+                {wishlist.length}
+              </span>
+            )}
           </Link>
 
           <Link to="/Cart" className="relative">
@@ -271,13 +275,15 @@ const Navbar = () => {
 
           <Link to="/Wishlist" className="relative">
             <HeartIcon size="25" />
-            <span
-              className="absolute -top-1 -right-2 bg-[var(--accent)]
+            {wishlist.length > 0 && ( // Conditionally render span based on wishlist length
+              <span
+                className="absolute -top-1 -right-2 bg-[var(--accent)]
             text-[10px] rounded-full w-4 h-4
             flex items-center justify-center"
-            >
-              2
-            </span>
+              >
+                {wishlist.length}
+              </span>
+            )}
           </Link>
 
           <Link to="/Cart" className="relative">

@@ -90,6 +90,7 @@ const AllProducts = ({ category }) => {
         {filteredProducts.map((product) => (
           <Card
             key={product.id}
+            id={product.id} // Add the id prop
             title={product.title}
             image={product.image}
             price={product.price}
