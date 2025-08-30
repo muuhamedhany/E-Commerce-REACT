@@ -8,7 +8,7 @@ import Newsletter from '../components/Newsletter/Newsletter';
 const Home = () => {
   return (
     <>
-      {/* 1. Hero Banner Section */}
+      {/* Hero Banner Section */}
       <div
         className="relative h-[600px] bg-cover bg-center
          flex flex-col items-center justify-center text-center
@@ -32,7 +32,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* 2. Featured Categories */}
+      {/* Featured Categories */}
       <div className="cont mt-15 mb-12">
         <h4 className=" font-bold text-center mb-10 FacultyGlyphic ">
           Shop by Category
@@ -92,7 +92,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* 3. Featured Products / Best Sellers */}
+      {/* 3Featured Products / Best Sellers */}
       <div className="cont mt-15 mb-12">
         <h4 className="font-bold text-center mb-10 FacultyGlyphic dark:text-white">
           Best Sellers
@@ -100,7 +100,7 @@ const Home = () => {
         <FeaturedProducts />
       </div>
 
-      {/* 4. Deals of the Day / Special Offers */}
+      {/* Deals of the Day / Special Offers */}
       <div className="my-35">
         {' '}
         <div
@@ -121,7 +121,7 @@ const Home = () => {
         </div>{' '}
       </div>
 
-      {/* 5. New Arrivals */}
+      {/* New Arrivals */}
       <div className="cont mt-15 mb-12">
         <h4 className="text-4xl font-bold text-center mb-10 FacultyGlyphic ">
           Fresh & New
@@ -136,7 +136,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* 6. Testimonials / Reviews (Optional) */}
+      {/* Testimonials / Reviews */}
       <div className="bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] py-12 mb-12 dark:bg-gray-900">
         <div className="cont">
           <h4 className="text-4xl font-bold text-center mb-10 FacultyGlyphic dark:text-white">
@@ -167,7 +167,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* 7. Newsletter Subscription */}
+      {/* Newsletter Subscription */}
       <div className="cont">
         <Newsletter />
       </div>
