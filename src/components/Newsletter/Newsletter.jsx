@@ -38,9 +38,7 @@ const Newsletter = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           className="flex-grow px-4 py-3 border border-gray-300 
-          rounded-md shadow-sm focus:outline-none focus:ring-2
-           focus:ring-blue-500 focus:border-transparent
-            dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+          rounded-[0.5rem] bg-[#495b5733] shadow-sm "
           required
         />
         <button type="submit" className="primary-button">
