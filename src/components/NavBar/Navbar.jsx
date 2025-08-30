@@ -293,7 +293,7 @@ const Navbar = () => {
 
           {/* Auth Dropdown */}
           <div
-            className="relative"
+            className="relative z-100"
             ref={authRef}
             onClick={() => setShowAuth(!showAuth)}
           >

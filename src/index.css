@@ -93,7 +93,7 @@ body {
 
 .cate {
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #f0f4f3;
+  -webkit-text-stroke-color: var(--text);
   color: transparent;
 }
 
