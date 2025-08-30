@@ -148,7 +148,7 @@ body {
   transform: translateY(-3px);
 }
 
-.theme-button {
+.ScrollUp-button {
   position: fixed;
   background-color: var(--secondary);
   color: var(--text);
@@ -160,28 +160,7 @@ body {
   right: 15px;
   box-shadow: rgba(0, 0, 0, 0.521) 0px 0px 35px;
 }
-.theme-button:hover {
-  transform: translateY(-3px);
-}
 
-.ScrollUp-button {
-  position: fixed;
-  background-color: var(--secondary);
-  color: var(--text);
-  padding: 0.5rem;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: 300ms;
-  bottom: 15px;
-  right: 60px;
-  box-shadow: rgba(0, 0, 0, 0.521) 0px 0px 35px;
-}
-@media (width <= 600px) {
-  .ScrollUp-button {
-    bottom: 55px;
-    right: 15px;
-  }
-}
 .ScrollUp-button:hover {
   transform: translateY(-3px);
 }

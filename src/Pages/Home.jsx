@@ -10,7 +10,7 @@ const Home = () => {
     <>
       {/* Hero Banner Section */}
       <div
-        className="relative md:h-[660px] h-[660px] bg-cover bg-center
+        className="relative  md:h-[660px] h-[660px] bg-cover bg-center
          flex flex-col items-center justify-center text-center
           "
         style={{
@@ -18,8 +18,8 @@ const Home = () => {
             "url('https://images.unsplash.com/photo-1713947506242-8fcae733d158?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
         }}
       >
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="flex flex-col items-center text-white z-10">
+        <div className="absolute  inset-0 bg-black opacity-50"></div>
+        <div className="flex px-4 md:px-0 flex-col items-center text-white z-10">
           <h1 className="text-center">
             Shop the Latest Trends at Unbeatable Prices
           </h1>

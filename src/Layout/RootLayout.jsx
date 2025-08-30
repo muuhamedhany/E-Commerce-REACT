@@ -13,7 +13,6 @@ const RootLayout = () => {
       <Outlet />
 
       <ScrollUp />
-      <ThemeToggle />
       <Footer />
     </div>
   );
