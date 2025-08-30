@@ -10,19 +10,28 @@ const Newsletter = () => {
   };
 
   return (
-    <div className="bg-[var(--accent)] rounded-[0.5rem]
+    <div
+      className="bg-[var(--accent)] rounded-[0.5rem]
      py-16 px-4 sm:px-6 lg:px-8 flex flex-col items-center
-      justify-center text-center">
-      <h1 className="text-3xl font-extrabold
-       text-gray-900 dark:text-white mb-4">
+      justify-center text-center"
+    >
+      <h1
+        className="text-3xl font-extrabold
+       text-[#f0f4f3] mb-4"
+      >
         Join Our Community
       </h1>
-      <p className="text-xl text-[#ffffff98]
-       mb-8 text-center max-w-md">
+      <p
+        className="text-xl text-[#ffffff98]
+       mb-8 text-center max-w-md"
+      >
         Stay up-to-date with our latest news and exclusive offers.
       </p>
-      <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row
-       gap-4 w-full max-w-md">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col sm:flex-row
+       gap-4 w-full max-w-md"
+      >
         <input
           type="email"
           placeholder="Enter your email"
@@ -34,10 +43,7 @@ const Newsletter = () => {
             dark:bg-gray-700 dark:border-gray-600 dark:text-white"
           required
         />
-        <button
-          type="submit"
-          className="primary-button"
-        >
+        <button type="submit" className="primary-button">
           Subscribe
         </button>
       </form>
@@ -45,4 +51,4 @@ const Newsletter = () => {
   );
 };
 
-export default Newsletter; 
+export default Newsletter;

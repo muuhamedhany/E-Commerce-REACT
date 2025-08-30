@@ -21,9 +21,11 @@ export function Card(props) {
         </div>
 
         <div className="flex justify-between">
-          <div className='flex items-center gap-3'>
+          <div className="flex items-center gap-3">
             <h2>${props.price}</h2>
-            <h3 className='text-[15px] line-through opacity-50 '>${props.price + 50.12}</h3>
+            <h3 className="text-[15px] line-through opacity-50 ">
+              ${props.price + 50.12}
+            </h3>
           </div>
 
           <div className="flex gap-1 items-center">
