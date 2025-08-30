@@ -12,7 +12,7 @@ import {
 
 const Contact = () => {
   return (
-    <div className="mt-15 px-4 md:px-0"> {/* Removed cont, added responsive padding */}
+    <div className="mt-15 cont px-4 md:px-0"> {/* Removed cont, added responsive padding */}
       <h1 className="text-4xl font-bold text-center
        mb-4 FacultyGlyphic text-gray-900 ">
         Contact Us
