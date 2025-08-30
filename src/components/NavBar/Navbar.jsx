@@ -165,7 +165,7 @@ const Navbar = () => {
             <div className="relative mb-6">
               <input
                 type="search"
-                placeholder="Search products..."
+                placeholder="Search products... (e.g., laptop)"
                 value={searchQuery}
                 onChange={handleSearch}
                 className="px-4 py-2 rounded-full bg-[#779c9433] border-2 border-[var(--accent)]
@@ -266,7 +266,7 @@ const Navbar = () => {
           <div className="relative">
             <input
               type="search"
-              placeholder="Search products..."
+              placeholder="Search products... (e.g., t-shirt)"
               value={searchQuery}
               onChange={handleSearch}
               className="px-4 py-2 rounded-full bg-[#779c9413] border-2 border-[var(--accent)]

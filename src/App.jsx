@@ -3,8 +3,6 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home';
 import Shop from './Pages/Shop';
-import Category from './Pages/Category';
-import AllProducts from './Pages/AllProducts';
 import ProductDetails from './Pages/ProductDetails';
 import Cart from './Pages/Cart';
 import Login from './Pages/Login';
@@ -13,6 +11,7 @@ import Contact from './Pages/Contact';
 import About from './Pages/About';
 import NotFound from './Pages/NotFound';
 import Wishlist from './Pages/Wishlist';
+import ForgotPassword from './Pages/ForgotPassword'; // Import ForgotPassword
 
 function App() {
   return (
@@ -35,6 +34,8 @@ function App() {
           <Route path="/Login" element={<Login />} />
 
           <Route path="/Signup" element={<Signup />} />
+
+          <Route path="/forgot-password" element={<ForgotPassword />} /> {/* Add route for ForgotPassword */}
 
           <Route path="/Contact" element={<Contact />} />
 

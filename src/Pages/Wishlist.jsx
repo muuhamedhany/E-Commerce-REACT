@@ -94,12 +94,8 @@ const Wishlist = () => {
                 value={sortOrder} // Set the value to sortOrder state
               >
                 <option value="recently_added">Sort by: Recently Added</option>
-                <option value="price_low_to_high">
-                  Sort by: Price (Low to High)
-                </option>
-                <option value="price_high_to_low">
-                  Sort by: Price (High to Low)
-                </option>
+                <option value="price_low_to_high">Sort by: Price (Low to High)</option>
+                <option value="price_high_to_low">Sort by: Price (High to Low)</option>
               </select>
             </div>
             <button className="secondary-button px-4 py-2 text-sm">
