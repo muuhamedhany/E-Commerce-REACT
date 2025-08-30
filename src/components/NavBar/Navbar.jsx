@@ -9,6 +9,7 @@ import useProducts from '../../data/data';
 import { useWishlist } from '../../context/WishlistContext'; // Import useWishlist hook
 import { useCart } from '../../context/CartContext'; // Import useCart hook
 import { useAuth } from '../../context/AuthContext'; // Import useAuth hook
+import { useToast } from '../../context/ToastContext'; // Import useToast hook
 
 const Navbar = () => {
   const [showAuth, setShowAuth] = useState(false);
@@ -19,6 +20,7 @@ const Navbar = () => {
   const { wishlist } = useWishlist(); // Use wishlist hook
   const { getCartItemCount } = useCart(); // Use cart hook
   const { currentUser, logout } = useAuth(); // Use auth hook
+  const { showToast } = useToast(); // Use toast hook
   const authRef = useRef(null);
   const categoriesRef = useRef(null);
   const mobileNavRef = useRef(null);
@@ -117,7 +119,17 @@ const Navbar = () => {
 
         {/* Mobile Icons */}
         <div className="md:hidden flex items-center gap-4">
-          <Link to="/Wishlist" className="relative">
+          <Link
+            to={currentUser ? "/Wishlist" : "/Login"}
+            onClick={(e) => {
+              if (!currentUser) {
+                e.preventDefault();
+                showToast('Please log in to view your wishlist.', 'error');
+                navigate('/Login');
+              }
+            }}
+            className="relative"
+          >
             <HeartIcon size="25" />
             {wishlist.length > 0 && ( // Conditionally render span based on wishlist length
               <span
@@ -130,7 +142,17 @@ const Navbar = () => {
             )}
           </Link>
 
-          <Link to="/Cart" className="relative">
+          <Link
+            to={currentUser ? "/Cart" : "/Login"}
+            onClick={(e) => {
+              if (!currentUser) {
+                e.preventDefault();
+                showToast('Please log in to view your cart.', 'error');
+                navigate('/Login');
+              }
+            }}
+            className="relative"
+          >
             <CartIcon size="25" />
             {getCartItemCount() > 0 && ( // Conditionally render span based on cart item count
               <span
@@ -303,7 +325,17 @@ const Navbar = () => {
             </button>
           </div>
 
-          <Link to="/Wishlist" className="relative">
+          <Link
+            to={currentUser ? "/Wishlist" : "/Login"}
+            onClick={(e) => {
+              if (!currentUser) {
+                e.preventDefault();
+                showToast('Please log in to view your wishlist.', 'error');
+                navigate('/Login');
+              }
+            }}
+            className="relative"
+          >
             <HeartIcon size="25" />
             {wishlist.length > 0 && ( // Conditionally render span based on wishlist length
               <span
@@ -316,7 +348,17 @@ const Navbar = () => {
             )}
           </Link>
 
-          <Link to="/Cart" className="relative">
+          <Link
+            to={currentUser ? "/Cart" : "/Login"}
+            onClick={(e) => {
+              if (!currentUser) {
+                e.preventDefault();
+                showToast('Please log in to view your cart.', 'error');
+                navigate('/Login');
+              }
+            }}
+            className="relative"
+          >
             <CartIcon size="25" />
             {getCartItemCount() > 0 && ( // Conditionally render span based on cart item count
               <span

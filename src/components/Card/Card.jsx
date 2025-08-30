@@ -4,16 +4,25 @@ import { FaHeart } from 'react-icons/fa'; // Import FaHeart icon
 import { useWishlist } from '../../context/WishlistContext'; // Import useWishlist hook
 import { useCart } from '../../context/CartContext'; // Import useCart hook
 import { useToast } from '../../context/ToastContext'; // Import useToast hook
+import { useAuth } from '../../context/AuthContext'; // Import useAuth hook
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './Card.css';
 export function Card(props) {
   const { id, title, image, price, rate, inStock, handleMoveToCart, handleRemoveItem } = props;
   const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist(); // Use wishlist hook
   const { addToCart } = useCart(); // Use cart hook
   const { showToast } = useToast(); // Use toast hook
+  const { currentUser } = useAuth(); // Use auth hook
+  const navigate = useNavigate(); // Use navigate hook
 
   const isProductInWishlist = isInWishlist(id); // Check if product is in wishlist
 
   const handleWishlistClick = () => {
+    if (!currentUser) {
+      showToast('Please log in to add items to your wishlist.', 'error');
+      navigate('/Login');
+      return;
+    }
     if (isProductInWishlist) {
       removeFromWishlist(id);
       showToast('Item removed from wishlist!', 'error');
@@ -24,6 +33,11 @@ export function Card(props) {
   };
 
   const handleAddToCartClick = () => {
+    if (!currentUser) {
+      showToast('Please log in to add items to your cart.', 'error');
+      navigate('/Login');
+      return;
+    }
     addToCart({ id, title, image, price, rate, inStock });
     showToast('Item added to cart successfully!', 'success');
   };

@@ -13,6 +13,7 @@ import NotFound from './Pages/NotFound';
 import Wishlist from './Pages/Wishlist';
 import ForgotPassword from './Pages/ForgotPassword'; // Import ForgotPassword
 import Profile from './Pages/Profile'; // Import Profile
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'; // Import ProtectedRoute
 
 function App() {
   return (
@@ -25,13 +26,15 @@ function App() {
             <Route index element={<Shop />} />
           </Route>
           <Route path="/Product/:id" element={<ProductDetails />} />
-          <Route path="/Cart" element={<Cart />} />
-          <Route path="/Wishlist" element={<Wishlist />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Signup" element={<Signup />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/Profile" element={<Profile />} />{' '}
-          {/* Add route for Profile */}
+          {/* Protected Routes */}
+          <Route element={<ProtectedRoute />}>
+            <Route path="/Cart" element={<Cart />} />
+            <Route path="/Wishlist" element={<Wishlist />} />
+            <Route path="/Profile" element={<Profile />} />
+          </Route>
           <Route path="/Contact" element={<Contact />} />
           <Route path="/About" element={<About />} />
           <Route path="*" element={<NotFound />} />
