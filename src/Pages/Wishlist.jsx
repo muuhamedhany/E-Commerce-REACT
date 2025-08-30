@@ -121,7 +121,7 @@ const Wishlist = () => {
                   title={item.title}
                   image={item.image}
                   price={item.price}
-                  rate={item.rating?.rate} // Use optional chaining for rating
+                  rate={item.rate} // Changed from item.rating?.rate to item.rate
                   inStock={item.inStock}
                   handleMoveToCart={handleMoveToCart}
                   handleRemoveItem={handleRemoveItem}

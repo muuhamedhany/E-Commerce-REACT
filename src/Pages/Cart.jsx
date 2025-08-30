@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import ProductCarousel from '../components/ProductCarousel/ProductCarousel';
 import { useCart } from '../context/CartContext'; // Import useCart hook
 import { FaTrashAlt } from 'react-icons/fa'; // Import trash icon
+import { PiEmptyBold } from 'react-icons/pi';
+import FeaturedProducts from '../components/FeaturedProducts/FeaturedProducts'; // Import FeaturedProducts
 
 const Cart = () => {
   const { cart, removeFromCart, updateQuantity, getCartTotal } = useCart(); // Use cart context
@@ -31,33 +32,6 @@ const Cart = () => {
   //   },
   // ]);
 
-  const recommendedProducts = [
-    {
-      id: 4,
-      name: 'Gaming Mouse',
-      image: 'https://via.placeholder.com/150/FF5733/FFFFFF?text=Mouse',
-      price: 45.00,
-    },
-    {
-      id: 5,
-      name: 'Mechanical Keyboard',
-      image: 'https://via.placeholder.com/150/33FF57/FFFFFF?text=Keyboard',
-      price: 120.00,
-    },
-    {
-      id: 6,
-      name: 'Portable SSD',
-      image: 'https://via.placeholder.com/150/3357FF/FFFFFF?text=SSD',
-      price: 80.00,
-    },
-    {
-      id: 7,
-      name: 'Webcam',
-      image: 'https://via.placeholder.com/150/F033FF/FFFFFF?text=Webcam',
-      price: 60.00,
-    },
-  ];
-
   const handleQuantityChange = (id, newQuantity) => {
     updateQuantity(id, newQuantity); // Use updateQuantity from context
   };
@@ -80,12 +54,8 @@ const Cart = () => {
       </p>
 
       {cart.length === 0 ? ( // Use cart.length from context
-        <div className="flex flex-col items-center justify-center py-20 bg-gray-50 rounded-lg shadow-md">
-          <img
-            src="https://res.cloudinary.com/dbj0t0vm7/image/upload/v1716922259/empty-cart-icon-illustration-free-vector_rm1n7s.jpg"
-            alt="Empty Cart"
-            className="mb-8 w-48 h-48 object-contain"
-          />
+        <div className="flex flex-col gap-5 items-center justify-center py-20 bg-gray-50 rounded-lg shadow-md">
+          <PiEmptyBold size="55" />
           <p className="text-2xl font-semibold text-gray-700 mb-4 dark:text-gray-300">
             Your cart is empty. Start shopping to fill it up!
           </p>
@@ -108,8 +78,8 @@ const Cart = () => {
                 />
                 <div className="flex-grow text-center md:text-left">
                   <Link to={`/product/${item.id}`}>
-                    <h2 className="text-xl font-semibold hover:underline text-gray-800 dark:text-white">
-                      {item.name}
+                    <h2 className="text-xl font-semibold hover:underline text-white">
+                      {item.title} {/* Changed item.name to item.title */}
                     </h2>
                   </Link>
                   <p className="text-gray-700 dark:text-gray-300">
@@ -121,7 +91,9 @@ const Cart = () => {
                 </div>
                 <div className="flex items-center mt-4 md:mt-0">
                   <button
-                    onClick={() => handleQuantityChange(item.id, item.quantity - 1)}
+                    onClick={() =>
+                      handleQuantityChange(item.id, item.quantity - 1)
+                    }
                     className="px-3 py-1 border rounded-l-md hover:bg-gray-200 transition-colors duration-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-900"
                   >
                     -
@@ -130,7 +102,9 @@ const Cart = () => {
                     {item.quantity}
                   </span>
                   <button
-                    onClick={() => handleQuantityChange(item.id, item.quantity + 1)}
+                    onClick={() =>
+                      handleQuantityChange(item.id, item.quantity + 1)
+                    }
                     className="px-3 py-1 border rounded-r-md hover:bg-gray-200 transition-colors duration-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-900"
                   >
                     +
@@ -155,11 +129,15 @@ const Cart = () => {
           <div className="lg:w-1/3 bg-gray-50 p-6 rounded-lg shadow-md mt-8 lg:mt-0 dark:bg-gray-800 dark:text-white">
             <h2 className="text-2xl font-bold mb-4">Order Summary</h2>
             <div className="flex justify-between mb-2">
-              <span className="text-gray-700 dark:text-gray-300">Subtotal:</span>
+              <span className="text-gray-700 dark:text-gray-300">
+                Subtotal:
+              </span>
               <span className="font-semibold">${subtotal.toFixed(2)}</span>
             </div>
             <div className="flex justify-between mb-2">
-              <span className="text-gray-700 dark:text-gray-300">Shipping:</span>
+              <span className="text-gray-700 dark:text-gray-300">
+                Shipping:
+              </span>
               <span className="font-semibold">
                 {shipping === 0 ? 'Free' : `$${shipping.toFixed(2)}`}
               </span>
@@ -183,10 +161,10 @@ const Cart = () => {
         </div>
       )}
       <div className="mt-12">
-        <h2 className="text-3xl font-bold text-center mb-6 FacultyGlyphic">
-          Recommended Products
-        </h2>
-        <ProductCarousel products={recommendedProducts} />
+        <h4 className="text-3xl font-bold text-center mb-6 FacultyGlyphic">
+          Featured Products
+        </h4>
+        <FeaturedProducts /> {/* Use FeaturedProducts component */}
       </div>
     </div>
   );

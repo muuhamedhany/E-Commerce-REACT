@@ -18,7 +18,7 @@ export function Card(props) {
       removeFromWishlist(id);
       showToast('Item removed from wishlist!', 'error');
     } else {
-      addToWishlist({ id, title, image, price, rate, inStock }); // Add inStock property
+      addToWishlist({ id, title, image, price, rate, inStock }); // Ensure rate is passed directly
       showToast('Item added to wishlist successfully!', 'success');
     }
   };

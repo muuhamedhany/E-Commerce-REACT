@@ -1,9 +1,22 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import useProducts from '../../data/data'; // Import useProducts hook
+import { Card } from '../Card/Card'; // Import Card component
+// Removed useCart, useWishlist, useToast as Card handles these
 
-const ProductCarousel = ({ products }) => {
+const ProductCarousel = () => {
   const scrollRef = useRef(null);
+  const { filteredData, loading, error } = useProducts(); // Use useProducts hook
+  const [carouselProducts, setCarouselProducts] = useState([]);
+  // Removed useCart, useWishlist, useToast hooks
+
+  useEffect(() => {
+    if (filteredData && filteredData.length > 0) {
+      // Select a subset of products for the carousel (e.g., first 10 or random)
+      setCarouselProducts(filteredData.slice(0, 10)); // Or implement more complex logic
+    }
+  }, [filteredData]);
 
   const scroll = (direction) => {
     if (scrollRef.current) {
@@ -16,7 +29,18 @@ const ProductCarousel = ({ products }) => {
     }
   };
 
-  if (!products || products.length === 0) {
+  // Removed handleWishlistClick and handleAddToCartClick
+
+  if (loading)
+    return <div className="text-center py-8">Loading recommended products...</div>;
+  if (error)
+    return (
+      <div className="text-center py-8 text-red-500">
+        Error: {error.message}
+      </div>
+    );
+
+  if (!carouselProducts || carouselProducts.length === 0) {
     return null; // Or a placeholder if no products are available
   }
 
@@ -26,38 +50,28 @@ const ProductCarousel = ({ products }) => {
         className="flex overflow-x-scroll scroll-smooth hide-scrollbar"
         ref={scrollRef}
       >
-        {products.map((product) => (
-          <div key={product.id} className="flex-none w-64 p-4">
-            <Link to={`/products/${product.id}`}>
-              <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-40 object-cover rounded-t-lg"
-                />
-                <div className="p-4">
-                  <h3 className="font-semibold text-gray-800 text-lg mb-1 truncate">
-                    {product.name}
-                  </h3>
-                  <p className="text-gray-600 text-sm">${product.price.toFixed(2)}</p>
-                  <button className="mt-3 w-full bg-[var(--primary)] text-white py-2 rounded-md hover:bg-[var(--accent)] transition-colors duration-300">
-                    View Product
-                  </button>
-                </div>
-              </div>
-            </Link>
+        {carouselProducts.map((product) => (
+          <div key={product.id} className="flex-none w-64 h-[400px] p-4">
+            <Card
+              id={product.id}
+              title={product.title}
+              image={product.image}
+              price={product.price}
+              rate={product.rating?.rate}
+              inStock={product.inStock}
+            />
           </div>
         ))}
       </div>
       <button
         onClick={() => scroll('left')}
-        className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-lg hover:bg-gray-700 focus:outline-none"
+        className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-lg hover:bg-gray-700 focus:outline-none z-10"
       >
         <FaChevronLeft />
       </button>
       <button
         onClick={() => scroll('right')}
-        className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-lg hover:bg-gray-700 focus:outline-none"
+        className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-lg hover:bg-gray-700 focus:outline-none z-10"
       >
         <FaChevronRight />
       </button>
