@@ -6,55 +6,6 @@ import { Link } from 'react-router-dom';
 import Newsletter from '../components/Newsletter/Newsletter';
 
 const Home = () => {
-  // Placeholder for countdown timer
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
-
-  useEffect(() => {
-    const calculateTimeLeft = () => {
-      const difference = +new Date('2024-12-31T23:59:59') - +new Date(); // Example end date
-      let timeLeft = {};
-
-      if (difference > 0) {
-        timeLeft = {
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((difference / 1000 / 60) % 60),
-          seconds: Math.floor((difference / 1000) % 60),
-        };
-      }
-      return timeLeft;
-    };
-
-    setTimeLeft(calculateTimeLeft());
-    const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  const timerComponents = [];
-
-  Object.keys(timeLeft).forEach((interval) => {
-    if (!timeLeft[interval]) {
-      return;
-    }
-
-    timerComponents.push(
-      <span
-        key={interval}
-        className="text-2xl font-bold text-[var(--primary)] mx-1"
-      >
-        {timeLeft[interval]} {interval}{' '}
-      </span>,
-    );
-  });
-
   return (
     <>
       {/* 1. Hero Banner Section */}
