@@ -26,14 +26,14 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="cont mt-15 flex items-center justify-center min-h-[calc(100vh-100px)] px-4">
+    <div className="cont mt-15 flex items-center justify-center px-4">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg">
         <h1 className="text-3xl font-bold text-center mb-2 text-gray-900 FacultyGlyphic">
           Forgot Your Password?
         </h1>
         <p className="text-center text-gray-600 mb-8">
-          Enter your email address below, and we'll send you a link to reset your
-          password.
+          Enter your email address below, and we'll send you a link to reset
+          your password.
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -52,11 +52,17 @@ const ForgotPassword = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="e.g., john.doe@example.com" // Added placeholder
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[var(--primary)] focus:border-[var(--primary)]"
+              className="mt-1 block w-full px-3 py-2 border
+               border-gray-300 rounded-md shadow-sm
+                focus:outline-none focus:ring-[var(--primary)]
+                 focus:border-[var(--primary)]"
             />
           </div>
 
-          <button type="submit" className="w-full primary-button py-2 px-4 text-lg">
+          <button
+            type="submit"
+            className="w-full primary-button py-2 px-4 text-lg"
+          >
             Reset Password
           </button>
         </form>
@@ -72,4 +78,4 @@ const ForgotPassword = () => {
   );
 };
 
-export default ForgotPassword; 
+export default ForgotPassword;

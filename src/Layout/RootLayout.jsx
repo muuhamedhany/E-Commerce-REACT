@@ -18,7 +18,8 @@ const RootLayout = () => {
   const shouldShowBreadcrumbs =
     location.pathname !== '/' &&
     location.pathname !== '/Login' &&
-    location.pathname !== '/Signup';
+    location.pathname !== '/Signup' &&
+    location.pathname !== '/forgot-password';
 
   let breadcrumbItems = [];
 
