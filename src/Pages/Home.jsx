@@ -44,7 +44,9 @@ const Home = () => {
              rounded-lg shadow-md hover:shadow-lg transition-shadow
               duration-300"
           >
-            <h3 className="text-lg text-center font-semibold ">Men's Fashion</h3>
+            <h3 className="text-lg text-center font-semibold ">
+              Men's Fashion
+            </h3>
           </Link>
           <Link
             to="/Shop/women's%20clothing"
@@ -71,7 +73,7 @@ const Home = () => {
              rounded-lg shadow-md hover:shadow-lg transition-shadow
               duration-300"
           >
-            <h3 className="text-lg font-semibold ">Jewelery</h3>
+            <h3 className="text-lg text-center font-semibold ">Jewelery</h3>
           </Link>
           <Link
             to="/Shop/shoes"
@@ -79,7 +81,7 @@ const Home = () => {
              rounded-lg shadow-md hover:shadow-lg transition-shadow
               duration-300"
           >
-            <h3 className="text-lg font-semibold ">Shoes</h3>
+            <h3 className="text-lg text-center font-semibold ">Shoes</h3>
           </Link>
           <Link
             to="/Shop/home-living"
@@ -87,7 +89,9 @@ const Home = () => {
              rounded-lg shadow-md hover:shadow-lg transition-shadow
               duration-300"
           >
-            <h3 className="text-lg font-semibold ">Home & Living</h3>
+            <h3 className="text-lg text-center font-semibold ">
+              Home & Living
+            </h3>
           </Link>
         </div>
       </div>
