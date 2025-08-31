@@ -44,7 +44,7 @@ const Home = () => {
              rounded-lg shadow-md hover:shadow-lg transition-shadow
               duration-300"
           >
-            <h3 className="text-lg font-semibold ">Men's Fashion</h3>
+            <h3 className="text-lg text-center font-semibold ">Men's Fashion</h3>
           </Link>
           <Link
             to="/Shop/women's%20clothing"

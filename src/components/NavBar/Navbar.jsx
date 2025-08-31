@@ -10,6 +10,7 @@ import { useWishlist } from '../../context/WishlistContext'; // Import useWishli
 import { useCart } from '../../context/CartContext'; // Import useCart hook
 import { useAuth } from '../../context/AuthContext'; // Import useAuth hook
 import { useToast } from '../../context/ToastContext'; // Import useToast hook
+import { FaCartArrowDown } from "react-icons/fa6";
 
 const Navbar = () => {
   const [showAuth, setShowAuth] = useState(false);
@@ -63,8 +64,12 @@ const Navbar = () => {
      py-5 w-full bg-[var(--background)]"
     >
       <div className="flex cont items-center  justify-between ">
-        <Link to="/" className="text-2xl font-bold">
-          LOGO
+        <Link to="/" className="text-2xl flex items-center
+         justify-center gap-2 font-bold">
+
+        <FaCartArrowDown size='30' />
+        <h5 className='FacultyGlyphic text-[2.1rem] font-bold'>PureStore</h5>
+
         </Link>
 
         {/* Desktop Navigation */}

@@ -27,7 +27,7 @@ body {
   :root {
     --text: #0b0f0e;
     --background: #f3f6f6;
-    --primary: #779c94;
+    --primary: #638880;
     --secondary: #b2c1c7;
     --accent: #97a7b4;
     --shadow: #1f252b45;
@@ -35,9 +35,8 @@ body {
   .dark {
     --text: #f0f4f3;
     --background: #090c0c;
-    --primary: #638880;
-    --secondary: #38474d;
-    --accent: #4b5b68;
+    
+    
     --shadow: #ffffff1c;
   }
 }
