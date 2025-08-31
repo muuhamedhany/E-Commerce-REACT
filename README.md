@@ -1,12 +1,37 @@
-# React + Vite
+# 🛒 E-Commerce Website  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **responsive e-commerce website** built with **React + Tailwind CSS**. The project focuses on a smooth shopping experience with product browsing, cart & wishlist management, and frontend-only authentication using **localStorage**.  
 
-Currently, two official plugins are available:
+## ✨ Features  
+- 📱 **Responsive Design** – Works seamlessly on desktop, tablet, and mobile.  
+- ⚡ **React + Tailwind CSS** – Fast, modern, and stylish UI.  
+- 🛍️ **Product Listings** – Fetched dynamically from Fake Store API with category filters & search.  
+- 📄 **Product Details Page** – Shows image, description, price, rating, stock, and add-to-cart/wishlist.  
+- 🛒 **Shopping Cart** – Add/remove products, update quantities, persisted in `localStorage`.  
+- 💖 **Wishlist** – Save favorite products, persisted in `localStorage`.  
+- 🔔 **Toast Notifications** – Success/error messages for actions.  
+- 🧭 **Dynamic Breadcrumbs** – Navigation updates based on current route.  
+- 🔑 **Authentication (Frontend Only)** – Sign Up with validation (unique email & password match), Login with localStorage-based user auth, Forgot Password flow (validation only), Profile page with user info + Logout, Protected routes (Profile requires login).  
+- 🚫 **404 Page** – Custom not found page.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tech Stack  
+- **React** – Frontend library for building the UI.  
+- **Tailwind CSS** – Utility-first CSS framework for styling.  
+- **Fake Store API** – Product data source.  
+- **localStorage** – Persists cart, wishlist, and user data.  
 
-## Expanding the ESLint configuration
+## 🚀 Getting Started  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1️⃣ Clone the repository  
+```bash
+git clone https://github.com/your-username/ecommerce-website.git
+cd ecommerce-website
+```
+## 2️⃣ Install dependencies
+```bash
+npm install
+```
+3️⃣ Run the project
+```bash
+npm run dev
+```
