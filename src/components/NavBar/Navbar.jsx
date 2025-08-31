@@ -10,7 +10,7 @@ import { useWishlist } from '../../context/WishlistContext'; // Import useWishli
 import { useCart } from '../../context/CartContext'; // Import useCart hook
 import { useAuth } from '../../context/AuthContext'; // Import useAuth hook
 import { useToast } from '../../context/ToastContext'; // Import useToast hook
-import { FaCartArrowDown } from "react-icons/fa6";
+import { FaCartArrowDown } from 'react-icons/fa6';
 
 const Navbar = () => {
   const [showAuth, setShowAuth] = useState(false);
@@ -64,12 +64,18 @@ const Navbar = () => {
      py-5 w-full bg-[var(--background)]"
     >
       <div className="flex cont items-center  justify-between ">
-        <Link to="/" className="text-2xl flex items-center
-         justify-center gap-2 font-bold">
-
-        <FaCartArrowDown size='30' />
-        <h5 className='FacultyGlyphic text-[1.6rem] md:text-[2.1rem] font-bold'>PureStore</h5>
-
+        <Link
+          to="/"
+          className="text-2xl flex items-center
+         justify-center gap-2 font-bold"
+        >
+          <FaCartArrowDown size="30" />
+          <h5
+            className="FacultyGlyphic text-[1.6rem]
+               md:text-[2.1rem] font-bold"
+          >
+            PureStore
+          </h5>
         </Link>
 
         {/* Desktop Navigation */}
@@ -125,7 +131,7 @@ const Navbar = () => {
         {/* Mobile Icons */}
         <div className="md:hidden flex items-center gap-4">
           <Link
-            to={currentUser ? "/Wishlist" : "/Login"}
+            to={currentUser ? '/Wishlist' : '/Login'}
             onClick={(e) => {
               if (!currentUser) {
                 e.preventDefault();
@@ -148,7 +154,7 @@ const Navbar = () => {
           </Link>
 
           <Link
-            to={currentUser ? "/Cart" : "/Login"}
+            to={currentUser ? '/Cart' : '/Login'}
             onClick={(e) => {
               if (!currentUser) {
                 e.preventDefault();
@@ -331,7 +337,7 @@ const Navbar = () => {
           </div>
 
           <Link
-            to={currentUser ? "/Wishlist" : "/Login"}
+            to={currentUser ? '/Wishlist' : '/Login'}
             onClick={(e) => {
               if (!currentUser) {
                 e.preventDefault();
@@ -354,7 +360,7 @@ const Navbar = () => {
           </Link>
 
           <Link
-            to={currentUser ? "/Cart" : "/Login"}
+            to={currentUser ? '/Cart' : '/Login'}
             onClick={(e) => {
               if (!currentUser) {
                 e.preventDefault();

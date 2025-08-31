@@ -35,8 +35,7 @@ body {
   .dark {
     --text: #f0f4f3;
     --background: #090c0c;
-    
-    
+
     --shadow: #ffffff1c;
   }
 }
@@ -74,7 +73,7 @@ h4 {
 @media (width < 600px) {
   h1 {
     font-family: 'Faculty Glyphic';
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: bold;
   }
 

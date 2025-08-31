@@ -23,7 +23,7 @@ const Home = () => {
           <h1 className="text-center">
             Shop the Latest Trends at Unbeatable Prices
           </h1>
-          <p className="text-xl mb-8 max-w-2xl">
+          <p className="text-[1.2rem] md:text-[1.5rem] mb-8">
             Discover fashion, electronics, and more – all in one place.
           </p>
           <Link to="/Shop" className="primary-button z-10 text-[1.5rem]">
