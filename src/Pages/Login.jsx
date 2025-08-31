@@ -31,7 +31,7 @@ const Login = () => {
   };
 
   return (
-    <div className="cont mt-15 flex items-center justify-center  px-4">
+    <div className="cont mt-15 mb-38 flex items-center justify-center  px-4">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg">
         <h1 className="text-3xl font-bold text-center mb-2 text-gray-900 FacultyGlyphic">
           Welcome Back
