@@ -68,7 +68,7 @@ const Navbar = () => {
          justify-center gap-2 font-bold">
 
         <FaCartArrowDown size='30' />
-        <h5 className='FacultyGlyphic text-[2.1rem] font-bold'>PureStore</h5>
+        <h5 className='FacultyGlyphic text-[1.6rem] md:text-[2.1rem] font-bold'>PureStore</h5>
 
         </Link>
 
