@@ -48,7 +48,7 @@ const Home = () => {
                 "url('https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
             }}
           >
-            <div className="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+            <div className="absolute inset-0 bg-black opacity-35 rounded-lg"></div>
             <div className="relative z-10 text-center">
               <h3 className="text-lg  text-white  text-center font-semibold ">
                 Men's Fashion
@@ -66,7 +66,7 @@ const Home = () => {
                 "url('https://plus.unsplash.com/premium_photo-1671198905435-20f8d166efb2?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
             }}
           >
-            <div className="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+            <div className="absolute inset-0 bg-black opacity-35 rounded-lg"></div>
             <div className="relative z-10 text-center">
               <h3 className="text-lg  text-white  text-center font-semibold ">
                 Women's Fashion
@@ -84,7 +84,7 @@ const Home = () => {
                 "url('https://plus.unsplash.com/premium_photo-1679079456083-9f288e224e96?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
             }}
           >
-            <div className="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+            <div className="absolute inset-0 bg-black opacity-35 rounded-lg"></div>
             <div className="relative z-10 text-center">
               <h3 className="text-lg  text-white  text-center font-semibold ">
                 Electronics
@@ -102,7 +102,7 @@ const Home = () => {
                 "url('https://plus.unsplash.com/premium_photo-1661645433820-24c8604e4db5?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
             }}
           >
-            <div className="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+            <div className="absolute inset-0 bg-black opacity-35 rounded-lg"></div>
             <div className="relative z-10 text-center">
               <h3 className="text-lg  text-white  text-center font-semibold ">
                 Jewelery
@@ -120,7 +120,7 @@ const Home = () => {
                 "url('https://images.unsplash.com/photo-1529810313688-44ea1c2d81d3?q=80&w=941&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
             }}
           >
-            <div className="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+            <div className="absolute inset-0 bg-black opacity-35 rounded-lg"></div>
             <div className="relative z-10 text-center">
               <h3 className="text-lg  text-white  text-center font-semibold ">
                 Shoes
@@ -138,7 +138,7 @@ const Home = () => {
                 "url('https://plus.unsplash.com/premium_photo-1723200799213-e6cff0c3e641?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
             }}
           >
-            <div className="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+            <div className="absolute inset-0 bg-black opacity-35 rounded-lg"></div>
             <div className="relative z-10 text-center">
               <h3 className="text-lg  text-white  text-center font-semibold ">
                 Home & Living
