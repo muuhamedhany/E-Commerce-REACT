@@ -130,7 +130,7 @@ const Home = () => {
             <Link
               to="/Shop/men's%20clothing"
               className="relative  bg-cover bg-center flex flex-col
-           items-center justify-center text-white p-8 rounded-lg
+           items-center justify-center text-white py-8 rounded-lg
             shadow-md hover:scale-105 transition-transform duration-300"
               style={{
                 backgroundImage:
@@ -150,7 +150,7 @@ const Home = () => {
             <Link
               to="/Shop/men's%20clothing"
               className="relative  bg-cover bg-center flex flex-col
-           items-center justify-center text-white p-8 rounded-lg
+           items-center justify-center text-white py-8 rounded-lg
             shadow-md hover:scale-105 transition-transform duration-300"
               style={{
                 backgroundImage:
@@ -170,7 +170,7 @@ const Home = () => {
             <Link
               to="/Shop/electronics"
               className="relative  bg-cover bg-center flex flex-col
-           items-center justify-center text-white p-8 rounded-lg
+           items-center justify-center text-white py-8 rounded-lg
             shadow-md hover:scale-105 transition-transform duration-300"
               style={{
                 backgroundImage:
@@ -190,7 +190,7 @@ const Home = () => {
             <Link
               to="/Shop/jewelery"
               className="relative  bg-cover bg-center flex flex-col
-           items-center justify-center text-white p-8 rounded-lg
+           items-center justify-center text-white py-8 rounded-lg
             shadow-md hover:scale-105 transition-transform duration-300"
               style={{
                 backgroundImage:
@@ -210,7 +210,7 @@ const Home = () => {
             <Link
               to="/Shop/shoes"
               className="relative  bg-cover bg-center flex flex-col
-           items-center justify-center text-white p-8 rounded-lg
+           items-center justify-center text-white py-8 rounded-lg
             shadow-md hover:scale-105 transition-transform duration-300"
               style={{
                 backgroundImage:
@@ -230,7 +230,7 @@ const Home = () => {
             <Link
               to="/Shop/home-living"
               className="relative  bg-cover bg-center flex flex-col
-           items-center justify-center text-white p-8 rounded-lg
+           items-center justify-center text-white py-8 rounded-lg
             shadow-md hover:scale-105 transition-transform duration-300"
               style={{
                 backgroundImage:
