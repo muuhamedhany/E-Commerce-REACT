@@ -40,58 +40,110 @@ const Home = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
           <Link
             to="/Shop/men's%20clothing"
-            className="flex flex-col items-center justify-center p-6 bg-[var(--accent)]
-             rounded-lg shadow-md hover:shadow-lg transition-shadow
-              duration-300"
+            className="relative  bg-cover bg-center flex flex-col
+         items-center justify-center text-white p-8 rounded-lg
+          shadow-md"
+            style={{
+              backgroundImage:
+                "url('https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+            }}
           >
-            <h3 className="text-lg text-center font-semibold ">
-              Men's Fashion
-            </h3>
+            <div className="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+            <div className="relative z-10 text-center">
+              <h3 className="text-lg  text-white  text-center font-semibold ">
+                Men's Fashion
+              </h3>
+            </div>
           </Link>
+
           <Link
-            to="/Shop/women's%20clothing"
-            className="flex flex-col items-center justify-center p-6
-             bg-[var(--accent)]
-             rounded-lg shadow-md hover:shadow-lg transition-shadow
-              duration-300"
+            to="/Shop/men's%20clothing"
+            className="relative  bg-cover bg-center flex flex-col
+         items-center justify-center text-white p-8 rounded-lg
+          shadow-md"
+            style={{
+              backgroundImage:
+                "url('https://plus.unsplash.com/premium_photo-1671198905435-20f8d166efb2?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+            }}
           >
-            <h3 className="text-center text-lg font-semibold ">
-              Women's Fashion
-            </h3>
+            <div className="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+            <div className="relative z-10 text-center">
+              <h3 className="text-lg  text-white  text-center font-semibold ">
+                Women's Fashion
+              </h3>
+            </div>
           </Link>
+
           <Link
             to="/Shop/electronics"
-            className="flex flex-col items-center justify-center p-6 bg-[var(--accent)]
-             rounded-lg shadow-md hover:shadow-lg transition-shadow
-              duration-300"
+            className="relative  bg-cover bg-center flex flex-col
+         items-center justify-center text-white p-8 rounded-lg
+          shadow-md"
+            style={{
+              backgroundImage:
+                "url('https://plus.unsplash.com/premium_photo-1679079456083-9f288e224e96?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+            }}
           >
-            <h3 className="text-lg font-semibold ">Electronics</h3>
+            <div className="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+            <div className="relative z-10 text-center">
+              <h3 className="text-lg  text-white  text-center font-semibold ">
+                Electronics
+              </h3>
+            </div>
           </Link>
+
           <Link
             to="/Shop/jewelery"
-            className="flex flex-col items-center justify-center p-6 bg-[var(--accent)]
-             rounded-lg shadow-md hover:shadow-lg transition-shadow
-              duration-300"
+            className="relative  bg-cover bg-center flex flex-col
+         items-center justify-center text-white p-8 rounded-lg
+          shadow-md"
+            style={{
+              backgroundImage:
+                "url('https://plus.unsplash.com/premium_photo-1661645433820-24c8604e4db5?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+            }}
           >
-            <h3 className="text-lg text-center font-semibold ">Jewelery</h3>
+            <div className="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+            <div className="relative z-10 text-center">
+              <h3 className="text-lg  text-white  text-center font-semibold ">
+                Jewelery
+              </h3>
+            </div>
           </Link>
+
           <Link
             to="/Shop/shoes"
-            className="flex flex-col items-center justify-center p-6 bg-[var(--accent)]
-             rounded-lg shadow-md hover:shadow-lg transition-shadow
-              duration-300"
+            className="relative  bg-cover bg-center flex flex-col
+         items-center justify-center text-white p-8 rounded-lg
+          shadow-md"
+            style={{
+              backgroundImage:
+                "url('https://images.unsplash.com/photo-1529810313688-44ea1c2d81d3?q=80&w=941&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+            }}
           >
-            <h3 className="text-lg text-center font-semibold ">Shoes</h3>
+            <div className="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+            <div className="relative z-10 text-center">
+              <h3 className="text-lg  text-white  text-center font-semibold ">
+                Shoes
+              </h3>
+            </div>
           </Link>
+
           <Link
             to="/Shop/home-living"
-            className="flex flex-col items-center justify-center p-6 bg-[var(--accent)]
-             rounded-lg shadow-md hover:shadow-lg transition-shadow
-              duration-300"
+            className="relative  bg-cover bg-center flex flex-col
+         items-center justify-center text-white p-8 rounded-lg
+          shadow-md"
+            style={{
+              backgroundImage:
+                "url('https://plus.unsplash.com/premium_photo-1723200799213-e6cff0c3e641?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+            }}
           >
-            <h3 className="text-lg text-center font-semibold ">
-              Home & Living
-            </h3>
+            <div className="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+            <div className="relative z-10 text-center">
+              <h3 className="text-lg  text-white  text-center font-semibold ">
+                Home & Living
+              </h3>
+            </div>
           </Link>
         </div>
       </div>
